@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kvadrātvienādojuma risinātājs</h1>
+    <p><input type="number" name="" id="inp1" placeholder="inp1"> </p>
+    <p><input type="number" name="" id="inp2" placeholder="inp2"> </p>
+    <p><input type="number" name="" id="inp3" placeholder="inp3"> </p>
+
+    <p><span id="rez"> </span></p>
+
+    <button type="button" onclick="funkcija()">Apreķināt</button>
+
+    <script>
+
+        function funkcija(a, b, c) {
+
+            var a = Number(inp1.value);
+            var b = Number(inp2.value);
+            var c = Number(inp3.value);
+
+            if (isNaN(a) && isNaN(b) && isNaN(c)) {
+                rez.innerHTML = "Ievaditie dati nav skaitļi!";
+                return;
+            }
+        }
+
+        var disk(){
+
+        }
+
+        function saknes(a, b, D) {
+            if (D < 0) {
+                rez.innerHTML = "Vienādojumam nav sakņu!";
+                return false;
+            }
+            else {
+                x1 = (-b + Math.sqrt(D)) / (2 * a);
+                x2 = (-b + Math.sqrt(D)) / (2 * a);
+                return [x1, x2];
+            }
+        }
+
+
+
+
+        var atb=saknes(a,b, disk(a,b,c));
+        if(atb===false){
+            rez.innerHTML="Nav reālu sakņu!";
+        }
+        else{
+            rez.innerHTML= `Saknes x1 = ${atb[0].toFixed(3)}, x2=${atb[1].toFixed(3)}`;
+        }
+    </script>
+
+</body>
+
+</html>
